@@ -27,7 +27,9 @@ def _select_rm_score_fn(data_source):
     elif data_source == 'lighteval/MATH':
         return math.compute_score
     else:
-        raise NotImplementedError
+        from deepscaler.rewards.math_reward import deepscaler_reward_fn
+        return deepscaler_reward_fn
+        # raise NotImplementedError
 
 
 class RewardManager():
